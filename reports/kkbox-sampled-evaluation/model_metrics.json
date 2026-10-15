@@ -1,0 +1,138 @@
+{
+  "threshold": 0.5,
+  "test_rows": 150000,
+  "positive_label": "1",
+  "models": {
+    "prior_baseline": {
+      "accuracy_at_threshold": 0.91006,
+      "roc_auc": 0.5,
+      "average_precision": 0.08994,
+      "brier_score": 0.0825278368,
+      "log_loss": 0.3074594696836889
+    },
+    "logistic_regression_baseline": {
+      "accuracy_at_threshold": 0.91876,
+      "roc_auc": 0.8197627582548754,
+      "average_precision": 0.4603530922866569,
+      "brier_score": 0.06302865040113562,
+      "log_loss": 0.22819853955256791
+    },
+    "xgboost_raw": {
+      "accuracy_at_threshold": 0.9240266666666667,
+      "roc_auc": 0.8837712331246989,
+      "average_precision": 0.5696401516665602,
+      "brier_score": 0.056253408508855206,
+      "log_loss": 0.20103517906919863
+    },
+    "xgboost_sigmoid_calibrated": {
+      "accuracy_at_threshold": 0.9273933333333333,
+      "roc_auc": 0.8834741095648846,
+      "average_precision": 0.5710498389986431,
+      "brier_score": 0.05781401274692107,
+      "log_loss": 0.2121309237738733
+    },
+    "fairlearn_demographic_parity": {
+      "accuracy": 0.9234933333333334,
+      "uses_group_specific_randomized_thresholds": true,
+      "constraint": "demographic_parity"
+    }
+  },
+  "calibrated_classification_report": {
+    "0": {
+      "precision": 0.9341896058289206,
+      "recall": 0.9899567061512428,
+      "f1-score": 0.9612650133194863,
+      "support": 136509.0
+    },
+    "1": {
+      "precision": 0.7433545488581056,
+      "recall": 0.2943443777333037,
+      "f1-score": 0.42170657887750224,
+      "support": 13491.0
+    },
+    "accuracy": 0.9273933333333333,
+    "macro avg": {
+      "precision": 0.8387720773435131,
+      "recall": 0.6421505419422733,
+      "f1-score": 0.6914857960984943,
+      "support": 150000.0
+    },
+    "weighted avg": {
+      "precision": 0.9170259008049656,
+      "recall": 0.9273933333333333,
+      "f1-score": 0.9127371277257742,
+      "support": 150000.0
+    }
+  },
+  "raw_xgboost_classification_report": {
+    "0": {
+      "precision": 0.9287364041971365,
+      "recall": 0.9926891267242453,
+      "f1-score": 0.95964846433301,
+      "support": 136509.0
+    },
+    "1": {
+      "precision": 0.7560498655585431,
+      "recall": 0.22926395374694242,
+      "f1-score": 0.3518371061312706,
+      "support": 13491.0
+    },
+    "accuracy": 0.9240266666666667,
+    "macro avg": {
+      "precision": 0.8423931348778398,
+      "recall": 0.6109765402355938,
+      "f1-score": 0.6557427852321402,
+      "support": 150000.0
+    },
+    "weighted avg": {
+      "precision": 0.9132049769119813,
+      "recall": 0.9240266666666667,
+      "f1-score": 0.9049819107763456,
+      "support": 150000.0
+    }
+  },
+  "decision_economics": {
+    "assumptions": {
+      "target_fraction": 0.1,
+      "outreach_cost_per_customer": 5.0,
+      "retained_customer_value": 100.0,
+      "intervention_success_rate": 0.2,
+      "assumption_note": "Illustrative scenario inputs; replace with measured intervention costs, retention value, and causal lift before business use."
+    },
+    "models": {
+      "logistic_regression_baseline": {
+        "selection_rule": "Select the highest-risk customers by ranking score up to the fixed capacity; ties resolved by stable input order.",
+        "selected_count": 15000,
+        "selected_fraction": 0.1,
+        "observed_churners_selected": 6816,
+        "observed_churn_capture_rate": 0.5052257060262397,
+        "observed_churn_rate_in_selected": 0.4544,
+        "expected_churners_in_selected": 5533.356628243963,
+        "expected_successful_retains_under_assumed_lift": 1106.6713256487926,
+        "assumed_outreach_cost": 75000.0,
+        "illustrative_expected_net_value": 35667.132564879255,
+        "random_targeting_illustrative_expected_net_value_same_capacity": -55029.99990582623,
+        "incremental_expected_net_value_vs_random_targeting": 90697.13247070549,
+        "observed_label_scenario_net_value_not_causal": 61320.0,
+        "warning": "Scenario arithmetic only. Intervention success rate and retained value are assumptions; predictions are not causal treatment effects and may be miscalibrated."
+      },
+      "xgboost_raw_ranking_and_calibrated_probability": {
+        "selection_rule": "Select the highest-risk customers by ranking score up to the fixed capacity; ties resolved by stable input order.",
+        "selected_count": 15000,
+        "selected_fraction": 0.1,
+        "observed_churners_selected": 7974,
+        "observed_churn_capture_rate": 0.5910607071380921,
+        "observed_churn_rate_in_selected": 0.5316,
+        "expected_churners_in_selected": 5980.079544095161,
+        "expected_successful_retains_under_assumed_lift": 1196.0159088190321,
+        "assumed_outreach_cost": 75000.0,
+        "illustrative_expected_net_value": 44601.59088190322,
+        "random_targeting_illustrative_expected_net_value_same_capacity": -55470.18096087318,
+        "incremental_expected_net_value_vs_random_targeting": 100071.77184277639,
+        "observed_label_scenario_net_value_not_causal": 84480.00000000003,
+        "warning": "Scenario arithmetic only. Intervention success rate and retained value are assumptions; predictions are not causal treatment effects and may be miscalibrated."
+      }
+    },
+    "interpretation": "Expected net value applies assumed intervention success to predicted churn risk; retrospective value applies the same assumed success to observed held-out churn labels. Neither estimates causal intervention lift."
+  }
+}

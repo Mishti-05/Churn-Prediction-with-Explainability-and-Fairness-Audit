@@ -1,0 +1,521 @@
+{
+  "sensitive_feature": "gender",
+  "standard_threshold": {
+    "group_metrics": {
+      "Missing": {
+        "count": 89857.0,
+        "selection_rate": 0.025418164416795574,
+        "true_positive_rate": 0.3035428164500623,
+        "false_positive_rate": 0.006873219373219373,
+        "accuracy": 0.9500205882680258
+      },
+      "female": {
+        "count": 28454.0,
+        "selection_rate": 0.0526463766078583,
+        "true_positive_rate": 0.3002680965147453,
+        "false_positive_rate": 0.015288788221970554,
+        "accuracy": 0.894988402333591
+      },
+      "male": {
+        "count": 31689.0,
+        "selection_rate": 0.04922843889046672,
+        "true_positive_rate": 0.2765444015444015,
+        "false_positive_rate": 0.015029950989290252,
+        "accuracy": 0.8923285682729023
+      }
+    },
+    "group_label_prevalence": {
+      "Missing": {
+        "count": 89857,
+        "positive_count": 5617,
+        "positive_rate": 0.06251043324393203
+      },
+      "female": {
+        "count": 28454,
+        "positive_count": 3730,
+        "positive_rate": 0.1310887748646939
+      },
+      "male": {
+        "count": 31689,
+        "positive_count": 4144,
+        "positive_rate": 0.13077092997570136
+      }
+    },
+    "difference_max_minus_min": {
+      "count": 61403.0,
+      "selection_rate": 0.027228212191062726,
+      "true_positive_rate": 0.026998414905660795,
+      "false_positive_rate": 0.008415568848751182,
+      "accuracy": 0.05769201999512352
+    },
+    "ratio_min_over_max": {
+      "count": 0.3166586910313053,
+      "selection_rate": 0.48280937938284463,
+      "true_positive_rate": 0.9110556618621134,
+      "false_positive_rate": 0.44955945974464495,
+      "accuracy": 0.939272873969709
+    },
+    "confidence_intervals_95_percent": {
+      "method": "Percentile bootstrap resampling test rows within each observed group; intervals are descriptive, not simultaneous.",
+      "conditional_on_fixed_model_and_predictions": true,
+      "does_not_capture": [
+        "model-training uncertainty",
+        "mitigation-policy selection uncertainty",
+        "repeated-customer dependence",
+        "non-random missingness"
+      ],
+      "bootstrap_samples": 1000,
+      "group_rates": {
+        "Missing": {
+          "selection_rate": [
+            0.02446080995359293,
+            0.026442013421324993
+          ],
+          "true_positive_rate": [
+            0.291674035612794,
+            0.31520445833361815
+          ],
+          "false_positive_rate": [
+            0.00636682616318404,
+            0.007422727604811181
+          ],
+          "accuracy": [
+            0.9485961026965066,
+            0.9513560434913251
+          ]
+        },
+        "female": {
+          "selection_rate": [
+            0.04986996555844521,
+            0.05521279960638223
+          ],
+          "true_positive_rate": [
+            0.2855879910056427,
+            0.31410155656548555
+          ],
+          "false_positive_rate": [
+            0.013757912109568534,
+            0.0167566430913561
+          ],
+          "accuracy": [
+            0.8914036690799184,
+            0.8983974133689464
+          ]
+        },
+        "male": {
+          "selection_rate": [
+            0.04695635709552211,
+            0.05175376313547288
+          ],
+          "true_positive_rate": [
+            0.26285539691856447,
+            0.2906120685493604
+          ],
+          "false_positive_rate": [
+            0.013615304300694079,
+            0.016438601807181905
+          ],
+          "accuracy": [
+            0.8886679920477137,
+            0.8957082899428824
+          ]
+        }
+      },
+      "difference_max_minus_min": {
+        "selection_rate": [
+          0.02439327087052671,
+          0.02993495871976756
+        ],
+        "true_positive_rate": [
+          0.013425112153085329,
+          0.045500714559220334
+        ],
+        "false_positive_rate": [
+          0.0074088654751408,
+          0.01010539102727201
+        ],
+        "accuracy": [
+          0.0544927052640794,
+          0.061509822782073814
+        ]
+      }
+    },
+    "low_sample_groups": [],
+    "minimum_group_size_for_warning": 30
+  },
+  "fairlearn_demographic_parity_mitigation": {
+    "group_metrics": {
+      "Missing": {
+        "count": 89857.0,
+        "selection_rate": 0.0273100593164695,
+        "true_positive_rate": 0.3231262239629696,
+        "false_positive_rate": 0.007585470085470085,
+        "accuracy": 0.9505770279444006
+      },
+      "female": {
+        "count": 28454.0,
+        "selection_rate": 0.027272088282842482,
+        "true_positive_rate": 0.15978552278820377,
+        "false_positive_rate": 0.007280375343795502,
+        "accuracy": 0.8835313136993042
+      },
+      "male": {
+        "count": 31689.0,
+        "selection_rate": 0.027044084698160244,
+        "true_positive_rate": 0.15444015444015444,
+        "false_positive_rate": 0.007878017789072427,
+        "accuracy": 0.8825775505695983
+      }
+    },
+    "group_label_prevalence": {
+      "Missing": {
+        "count": 89857,
+        "positive_count": 5617,
+        "positive_rate": 0.06251043324393203
+      },
+      "female": {
+        "count": 28454,
+        "positive_count": 3730,
+        "positive_rate": 0.1310887748646939
+      },
+      "male": {
+        "count": 31689,
+        "positive_count": 4144,
+        "positive_rate": 0.13077092997570136
+      }
+    },
+    "difference_max_minus_min": {
+      "count": 61403.0,
+      "selection_rate": 0.00026597461830925664,
+      "true_positive_rate": 0.16868606952281515,
+      "false_positive_rate": 0.0005976424452769245,
+      "accuracy": 0.06799947737480228
+    },
+    "ratio_min_over_max": {
+      "count": 0.3166586910313053,
+      "selection_rate": 0.9902609285748105,
+      "true_positive_rate": 0.47795611431975066,
+      "false_positive_rate": 0.9241379670269452,
+      "accuracy": 0.9284650529354265
+    },
+    "confidence_intervals_95_percent": {
+      "method": "Percentile bootstrap resampling test rows within each observed group; intervals are descriptive, not simultaneous.",
+      "conditional_on_fixed_model_and_predictions": true,
+      "does_not_capture": [
+        "model-training uncertainty",
+        "mitigation-policy selection uncertainty",
+        "repeated-customer dependence",
+        "non-random missingness"
+      ],
+      "bootstrap_samples": 1000,
+      "group_rates": {
+        "Missing": {
+          "selection_rate": [
+            0.026274246858898027,
+            0.02836757292141959
+          ],
+          "true_positive_rate": [
+            0.31087932642182525,
+            0.3350782259895199
+          ],
+          "false_positive_rate": [
+            0.007045845082983319,
+            0.008219169539398267
+          ],
+          "accuracy": [
+            0.9491747999599364,
+            0.9518571174199005
+          ]
+        },
+        "female": {
+          "selection_rate": [
+            0.025339143881352357,
+            0.029170766851760736
+          ],
+          "true_positive_rate": [
+            0.14862126962847133,
+            0.17115068279396228
+          ],
+          "false_positive_rate": [
+            0.006220319407224739,
+            0.008475142065912
+          ],
+          "accuracy": [
+            0.8800159907218669,
+            0.8871511913966402
+          ]
+        },
+        "male": {
+          "selection_rate": [
+            0.02521300766827606,
+            0.02887437281075452
+          ],
+          "true_positive_rate": [
+            0.14377971274838666,
+            0.16520792115158783
+          ],
+          "false_positive_rate": [
+            0.006823318807433639,
+            0.008967735340524353
+          ],
+          "accuracy": [
+            0.879073968885102,
+            0.8858925810218056
+          ]
+        }
+      },
+      "difference_max_minus_min": {
+        "selection_rate": [
+          0.00028111788490839043,
+          0.0031666452564087285
+        ],
+        "true_positive_rate": [
+          0.15415235783314982,
+          0.183793586999695
+        ],
+        "false_positive_rate": [
+          0.00013893288030862125,
+          0.002225511792740047
+        ],
+        "accuracy": [
+          0.0654640413765157,
+          0.07190621852508042
+        ]
+      }
+    },
+    "low_sample_groups": [],
+    "minimum_group_size_for_warning": 30
+  },
+  "known_gender_only_sensitivity": {
+    "standard_threshold_known_gender_only": {
+      "group_metrics": {
+        "female": {
+          "count": 28454.0,
+          "selection_rate": 0.0526463766078583,
+          "true_positive_rate": 0.3002680965147453,
+          "false_positive_rate": 0.015288788221970554,
+          "accuracy": 0.894988402333591
+        },
+        "male": {
+          "count": 31689.0,
+          "selection_rate": 0.04922843889046672,
+          "true_positive_rate": 0.2765444015444015,
+          "false_positive_rate": 0.015029950989290252,
+          "accuracy": 0.8923285682729023
+        }
+      },
+      "group_label_prevalence": {
+        "female": {
+          "count": 28454,
+          "positive_count": 3730,
+          "positive_rate": 0.1310887748646939
+        },
+        "male": {
+          "count": 31689,
+          "positive_count": 4144,
+          "positive_rate": 0.13077092997570136
+        }
+      },
+      "difference_max_minus_min": {
+        "count": 3235.0,
+        "selection_rate": 0.0034179377173915795,
+        "true_positive_rate": 0.023723694970343767,
+        "false_positive_rate": 0.0002588372326803017,
+        "accuracy": 0.002659834060688704
+      },
+      "ratio_min_over_max": {
+        "count": 0.8979141026854744,
+        "selection_rate": 0.9350774367085046,
+        "true_positive_rate": 0.9209916230005516,
+        "false_positive_rate": 0.9830701276698736,
+        "accuracy": 0.997028079856953
+      },
+      "confidence_intervals_95_percent": {
+        "method": "Percentile bootstrap resampling test rows within each observed group; intervals are descriptive, not simultaneous.",
+        "conditional_on_fixed_model_and_predictions": true,
+        "does_not_capture": [
+          "model-training uncertainty",
+          "mitigation-policy selection uncertainty",
+          "repeated-customer dependence",
+          "non-random missingness"
+        ],
+        "bootstrap_samples": 1000,
+        "group_rates": {
+          "female": {
+            "selection_rate": [
+              0.050114219441906235,
+              0.055143389330146904
+            ],
+            "true_positive_rate": [
+              0.28505758080242305,
+              0.3144713161918105
+            ],
+            "false_positive_rate": [
+              0.013842150561367608,
+              0.016779884737471502
+            ],
+            "accuracy": [
+              0.891262212694173,
+              0.8983622689252829
+            ]
+          },
+          "male": {
+            "selection_rate": [
+              0.04692480040392565,
+              0.05144056297137808
+            ],
+            "true_positive_rate": [
+              0.26400705342594977,
+              0.29034603406022375
+            ],
+            "false_positive_rate": [
+              0.01354772027222554,
+              0.01650462168413787
+            ],
+            "accuracy": [
+              0.8890143267379848,
+              0.895862917731705
+            ]
+          }
+        },
+        "difference_max_minus_min": {
+          "selection_rate": [
+            0.0003439377447228189,
+            0.006946074182207182
+          ],
+          "true_positive_rate": [
+            0.0033335317953045287,
+            0.04266100922196536
+          ],
+          "false_positive_rate": [
+            4.7805326848603074e-05,
+            0.0024659365880711336
+          ],
+          "accuracy": [
+            0.00010365159897085252,
+            0.007335648965003994
+          ]
+        }
+      },
+      "low_sample_groups": [],
+      "minimum_group_size_for_warning": 30
+    },
+    "demographic_parity_known_gender_only": {
+      "group_metrics": {
+        "female": {
+          "count": 28454.0,
+          "selection_rate": 0.027272088282842482,
+          "true_positive_rate": 0.15978552278820377,
+          "false_positive_rate": 0.007280375343795502,
+          "accuracy": 0.8835313136993042
+        },
+        "male": {
+          "count": 31689.0,
+          "selection_rate": 0.027044084698160244,
+          "true_positive_rate": 0.15444015444015444,
+          "false_positive_rate": 0.007878017789072427,
+          "accuracy": 0.8825775505695983
+        }
+      },
+      "group_label_prevalence": {
+        "female": {
+          "count": 28454,
+          "positive_count": 3730,
+          "positive_rate": 0.1310887748646939
+        },
+        "male": {
+          "count": 31689,
+          "positive_count": 4144,
+          "positive_rate": 0.13077092997570136
+        }
+      },
+      "difference_max_minus_min": {
+        "count": 3235.0,
+        "selection_rate": 0.00022800358468223758,
+        "true_positive_rate": 0.005345368348049329,
+        "false_positive_rate": 0.0005976424452769245,
+        "accuracy": 0.0009537631297058535
+      },
+      "ratio_min_over_max": {
+        "count": 0.8979141026854744,
+        "selection_rate": 0.991639672682283,
+        "true_positive_rate": 0.9665466041304966,
+        "false_positive_rate": 0.9241379670269452,
+        "accuracy": 0.9989205100997355
+      },
+      "confidence_intervals_95_percent": {
+        "method": "Percentile bootstrap resampling test rows within each observed group; intervals are descriptive, not simultaneous.",
+        "conditional_on_fixed_model_and_predictions": true,
+        "does_not_capture": [
+          "model-training uncertainty",
+          "mitigation-policy selection uncertainty",
+          "repeated-customer dependence",
+          "non-random missingness"
+        ],
+        "bootstrap_samples": 1000,
+        "group_rates": {
+          "female": {
+            "selection_rate": [
+              0.025303999437688903,
+              0.02906445490967878
+            ],
+            "true_positive_rate": [
+              0.14741535036246328,
+              0.17157620471608426
+            ],
+            "false_positive_rate": [
+              0.006249138540454471,
+              0.008244391517005364
+            ],
+            "accuracy": [
+              0.8796302804526605,
+              0.8869429605679342
+            ]
+          },
+          "male": {
+            "selection_rate": [
+              0.025276909968758875,
+              0.02874972387894853
+            ],
+            "true_positive_rate": [
+              0.1436007952149026,
+              0.16586128273990106
+            ],
+            "false_positive_rate": [
+              0.006925624745381089,
+              0.008953711876184503
+            ],
+            "accuracy": [
+              0.8791686389598914,
+              0.8861758023288838
+            ]
+          }
+        },
+        "difference_max_minus_min": {
+          "selection_rate": [
+            5.2263039439788984e-05,
+            0.002981124383886208
+          ],
+          "true_positive_rate": [
+            0.00029372521053652804,
+            0.02126500803467128
+          ],
+          "false_positive_rate": [
+            3.602936420105403e-05,
+            0.0020877865328461686
+          ],
+          "accuracy": [
+            0.00011830063464965679,
+            0.006085068140106695
+          ]
+        }
+      },
+      "low_sample_groups": [],
+      "minimum_group_size_for_warning": 30
+    },
+    "excluded_missing_rows": 89857,
+    "note": "Conditional comparison among records with observed gender; does not correct bias from non-random missingness or establish fairness for customers with missing gender."
+  },
+  "mitigation": "ThresholdOptimizer selects group-specific randomized thresholds using a separate policy-validation split.",
+  "interpretation": "A parity constraint is a chosen trade-off, not a universal definition of fairness or evidence of legal compliance."
+}
