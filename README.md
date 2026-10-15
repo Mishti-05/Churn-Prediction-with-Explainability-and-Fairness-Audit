@@ -92,6 +92,3 @@ Fairlearn's `MetricFrame` reports both approaches on the same held-out test set.
 
 The synthetic dataset and its intentionally modest group effect are for demonstration only. SHAP describes model behavior, not causal effects. Production use needs domain validation, calibration, privacy controls, monitoring, and human review.
 
-## Interview discussion: why parity widened the TPR gap
-
-Demographic parity constrains the share of positive predictions, `P(ŷ=1 | group)`. Equal opportunity instead constrains recall among actual churners, `P(ŷ=1 | y=1, group)`. These are different quantities. Fairlearn's postprocessor used group-specific randomized thresholds to make the first nearly equal; that does not require the second to be equal. In this run the TPR gap rose from 2.70 to 16.87 percentage points: the measured TPR moved from 30.4% to 32.3% for Missing, 30.0% to 16.0% for female, and 27.7% to 15.4% for male. The policy redistributed positive predictions unevenly across true churners, given the groups' score/label distributions. The correct response is to compare objectives and stakeholder costs, not to declare demographic parity the uniquely fair answer.
